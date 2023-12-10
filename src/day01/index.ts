@@ -36,9 +36,11 @@ const part2 = (rawInput: string) => {
 
     const firstNumStr = convertNumWordToNumStr(numTypeMatches[0])
 
-    return numTypeMatches.length === 1
+    const res = numTypeMatches.length === 1
         ? parseInt(firstNumStr + firstNumStr)
-        : parseInt(firstNumStr + convertNumWordToNumStr(numTypeMatches.pop()))
+      : parseInt(firstNumStr + convertNumWordToNumStr(numTypeMatches.pop()))
+    console.log({line: res})
+    return res
   })
 
   return parsedCalibrationCodes.reduce((a, b) => a + b, 0)
