@@ -23,6 +23,7 @@
     "@types/node": "^16.11.6",
     "aocrunner": "^1.9.6",
     "esbuild": "^0.19.8",
-    "eslint": "^8.55.0"
+    "eslint": "^8.55.0",
+    "ts-node": "^10.9.2"
   }
 }

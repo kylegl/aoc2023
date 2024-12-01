@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current Day",
+      "program": "${file}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "esnext",
     "module": "es2020",
     "moduleResolution": "node",
     "strict": true,
@@ -9,6 +9,7 @@
     "outDir": "./dist",
     "preserveConstEnums": true,
     "removeComments": true,
+    "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
