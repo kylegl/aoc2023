@@ -1,8 +1,8 @@
 {
-  "name": "aoc2023",
+  "name": "aoc2024",
   "type": "module",
   "version": "1.0.0",
-  "description": "Advent of Code 2023 - solutions",
+  "description": "Advent of Code 2024 - solutions",
   "author": "Kyle",
   "license": "ISC",
   "keywords": [

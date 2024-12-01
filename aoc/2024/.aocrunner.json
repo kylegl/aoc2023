@@ -1,44 +1,42 @@
 {
   "version": 1,
-  "year": 2023,
+  "year": 2024,
   "language": "ts",
   "days": [
     {
       "part1": {
         "solved": false,
-        "result": "54561",
+        "result": null,
         "attempts": [],
-        "time": 2.670013
+        "time": null
       },
       "part2": {
         "solved": false,
-        "result": "54076",
+        "result": null,
         "attempts": [],
-        "time": 67.352317
+        "time": null
       }
     },
     {
       "part1": {
-        "solved": true,
-        "result": "2551",
+        "solved": false,
+        "result": null,
         "attempts": [],
-        "time": 1.428402
+        "time": null
       },
       "part2": {
-        "solved": true,
-        "result": "62811",
+        "solved": false,
+        "result": null,
         "attempts": [],
-        "time": 2.977003
+        "time": null
       }
     },
     {
       "part1": {
-        "solved": true,
-        "result": "535078",
-        "attempts": [
-          "533585"
-        ],
-        "time": 5.3708
+        "solved": false,
+        "result": null,
+        "attempts": [],
+        "time": null
       },
       "part2": {
         "solved": false,
