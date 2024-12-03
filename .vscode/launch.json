@@ -12,9 +12,6 @@
       ],
       "sourceMaps": true,
       "cwd": "${workspaceFolder}",
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ],
       "skipFiles": [
         "<node_internals>/**"
       ]
