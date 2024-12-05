@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import run from 'aocrunner'
 
 const parseInput = (rawInput: string) => rawInput
@@ -19,7 +18,7 @@ function part1(rawInput: string) {
   const log: { [key: number]: { [key: number]: any } } = {}
 
   const res = rows.reduce((acc, row, i) => {
-    const xLocations = getRowXLocations(row)
+    const xLocations = getRowCharLocations('X', row)
     log[i] = {}
 
     const total = xLocations.reduce((rowSum, loc) => {
@@ -183,17 +182,17 @@ function checkVertical(
   return { total, log }
 }
 
-function getRowXLocations(row: Array<string>) {
-  const xLocations = [] as Location[]
+function getRowCharLocations(char: string, row: Array<string>) {
+  const charLocations = [] as Location[]
 
   for (let i = 0; i < row.length; i++) {
-    if (row[i] !== 'X')
+    if (row[i] !== char)
       continue
 
-    xLocations.push({ value: 'X', idx: i })
+    charLocations.push({ value: char, idx: i })
   }
 
-  return xLocations
+  return charLocations
 }
 
 function generateLog(xIdx: number, properties: Array<string>) {
@@ -212,6 +211,41 @@ function generateLog(xIdx: number, properties: Array<string>) {
 
 function part2(rawInput: string) {
   const input = parseInput(rawInput)
+
+  const rows = input.split('\n').map(r => r.split(''))
+
+  return rows.reduce((grandTotal, row, i) => {
+    const mLocations = getRowCharLocations('A', row)
+    const prevRowStartIdx = i - 1 < 0 ? 0 : i - 1
+    const prevRow = i > 0 ? rows[prevRowStartIdx] : undefined
+    const nextRow = i < rows.length - 1 ? rows[i + 1] : undefined
+
+    grandTotal += mLocations.reduce((total, loc) => {
+      let downRight = 'A'
+      let upRight = 'A'
+
+      // need to track diag dr & diag
+      if (prevRow) {
+        downRight = prevRow[loc.idx - 1] + downRight
+        upRight += prevRow[loc.idx + 1]
+      }
+
+      if (nextRow) {
+        upRight = nextRow[loc.idx - 1] + upRight
+        downRight += nextRow[loc.idx + 1]
+      }
+
+      if (
+        (downRight === 'MAS' || downRight === 'SAM')
+        && (upRight === 'MAS' || upRight === 'SAM')
+      )
+        total += 1
+
+      return total
+    }, 0)
+
+    return grandTotal
+  }, 0)
 }
 
 run({
@@ -235,10 +269,19 @@ S.S.S.S.SS
   },
   part2: {
     tests: [
-      // {
-      //   input: ``,
-      //   expected: "",
-      // },
+      {
+        input: `.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........`,
+        expected: 9,
+      },
     ],
     solution: part2,
   },
