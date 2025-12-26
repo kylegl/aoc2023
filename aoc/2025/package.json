@@ -1,0 +1,29 @@
+{
+  "name": "aoc2025",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Advent of Code 2025 - solutions",
+  "keywords": [
+    "aoc"
+  ],
+  "engines": {
+    "node": ">=16.13.0"
+  },
+  "scripts": {
+    "start": "aocrunner day",
+    "build": "aocrunner build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "update:readme": "aocrunner update:readme"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.7.3",
+    "typescript": "^5.9.3",
+    "@types/node": "^25.0.3",
+    "aocrunner": "^1.10.0",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "ts-node": "^10.9.2"
+  }
+}
